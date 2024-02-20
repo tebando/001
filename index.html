@@ -1,43 +1,28 @@
-<!doctype HTML>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <script src="https://kit.fontawesome.com/14b20d6d18.js" crossorigin="anonymous"></script>
-        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
-        </head>
- <body>
-      <a-scene 
-        arjs
-        embedded
-        renderer="logarithmicDepthBuffer: true;"
-        vr-mode-ui="enabled: false"
-        id="scene"
-      >
-            <a-assets>
-                <a-asset-item id="model" src="public/elephant/scene.gltf" ></a-asset-item>
-            </a-assets>
-            <a-marker preset="hiro" 
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-              >
-                <a-entity 
-                    position="0 0 0"
-                    scale="0.1 0.1 0.1"
-                    class="clickable"
-                    gltf-model="#model"
-                    animation-mixer
-                    htmlembed
-                    ></a-entity>
-            </a-marker>
-
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-    </html>
+  <head>
+    <!-- A-Frameを読み込む -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- AR.jsを読み込む -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <!-- シーンの作成、VRモードのUI非表示 -->
+    <a-scene embedded arjs vr-mode-ui="enabled: false">
+      <a-assets>
+        <!-- 3Dモデルを読み込む -->
+        <a-asset-item id="chaei" src="public/elephant/scene.gltf" scale="1 1 1"></a-asset-item>
+      </a-assets>
+      <!-- マーカーを設定する -->
+      <a-marker type="pattern" url="hiro.patt">
+        <!-- 3Dモデルを呼び出す -->
+        <a-entity gltf-model="#chaei" rotation="-90 0 0"></a-entity>
+      </a-marker>
+      <!-- カメラを追加 -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+  <script>
+      //glTFの表示が暗くなる問題に対処
+      document.querySelector("a-scene").renderer.gammaOutput=true;
+  </script>
+</html>
