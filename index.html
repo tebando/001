@@ -15,7 +15,8 @@
         <a-asset-item id="chaei" src="sc001.glb" scale="2 2 2"></a-asset-item>
       </a-assets>
       <!-- マーカーを設定する -->
-      <a-marker type="pattern" url="hiro.patt">
+      <a-marker preset="hiro">
+       <!-- //"pattern" url="hiro.patt"-->
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#chaei"></a-entity>
       </a-marker>
