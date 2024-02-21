@@ -42,22 +42,14 @@ AFRAME.registerComponent("gesture-handler", {
  handleRotation: function (event) {
   if (this.isVisible) {
     // 新しい回転値を計算
-   // var newXRotation = this.el.object3D.rotation.x + event.detail.positionChange.y * this.data.rotationFactor; // X軸の回転を更新
-    var newYRotation = this.el.object3D.rotation.y + event.detail.positionChange.x * this.data.rotationFactor;
-//  var newZRotation = this.el.object3D.rotation.z + event.detail.positionChange.y * this.data.rotationFactor;
+     var newYRotation = this.el.object3D.rotation.y + event.detail.positionChange.x * this.data.rotationFactor;
 
     // Y軸の回転を-π/9からπ/9（-20度から20度）の範囲に制限
     if (newYRotation > Math.PI / 9) newYRotation = Math.PI / 9;
     else if (newYRotation < -Math.PI / 9) newYRotation = -Math.PI / 9;
 
-    // Z軸の回転を-π/9からπ/9（-20度から20度）の範囲に制限
-   // if (newZRotation > Math.PI / 9) newZRotation = Math.PI / 9;
-    // else if (newZRotation < -Math.PI / 9) newZRotation = -Math.PI / 9;
-
     // 回転を適用
-   // this.el.object3D.rotation.x = newXRotation; // X軸の回転を適用
     this.el.object3D.rotation.y = newYRotation;
-    //this.el.object3D.rotation.z = newZRotation;
   }
 },
 
