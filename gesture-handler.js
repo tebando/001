@@ -45,13 +45,13 @@ AFRAME.registerComponent("gesture-handler", {
     var newYRotation = this.el.object3D.rotation.y + event.detail.positionChange.x * this.data.rotationFactor;
     var newXRotation = this.el.object3D.rotation.x + event.detail.positionChange.y * this.data.rotationFactor;
 
-    // y軸の回転を-π/2からπ/2（-90度から90度）の範囲に制限
-    if (newYRotation > Math.PI/2) newYRotation = Math.PI/2;
-    else if (newYRotation < -Math.PI/2) newYRotation = -Math.PI/2;
+    // y軸の回転を-π/2からπ/2（-20度から20度）の範囲に制限
+    if (newYRotation > Math.PI/9) newYRotation = Math.PI/9;
+    else if (newYRotation < -Math.PI/9) newYRotation = -Math.PI/9;
 
-    // x軸の回転を-π/2からπ/2の範囲に制限
-    if (newXRotation > Math.PI/2) newXRotation = Math.PI/2;
-    else if (newXRotation < -Math.PI/2) newXRotation = -Math.PI/2;
+    // x軸の回転を-πからπの範囲に制限
+    if (newXRotation > Math.PI) newXRotation = Math.PI;
+    else if (newXRotation < -Math.PI) newXRotation = -Math.PI;
 
     // 回転を適用
     this.el.object3D.rotation.y = newYRotation;
