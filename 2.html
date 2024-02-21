@@ -28,10 +28,10 @@ function turnSoundOn () {
 </script>
 </head>
   <body style="margin: 0; overflow: hidden">
-        //  <div class="btn">
-         //   <button id="voice" class="voice" onclick="muteSound()"><i class="fa-solid fa-volume-high" style="color: #c0c0c0;"></i></button>
-          //  <button id="mute" class="mute-voice" onclick="turnSoundOn()"  style="display:none"><i class="fa-solid fa-volume-xmark" style="color: #ff2600;"></i></button>
-        // </div>
+        <div class="btn">
+          <button id="voice" class="voice" onclick="muteSound()"><i class="fa-solid fa-volume-high" style="color: #c0c0c0;"></i></button>
+        <button id="mute" class="mute-voice" onclick="turnSoundOn()"  style="display:none"><i class="fa-solid fa-volume-xmark" style="color: #ff2600;"></i></button>
+  </div>
     <!-- シーンの作成、VRモードのUI非表示 -->
        <a-scene 
          embedded
@@ -47,6 +47,7 @@ function turnSoundOn () {
       <a-marker type="pattern" url="2.patt">
       <a-image src="de001.jpg" 
         position="0.5 0 0" align="center" rotation="-90 0 0" color="#7993ff">
+      </a-image>
       
         <!-- 3Dモデルを呼び出す -->
       <a-entity 
