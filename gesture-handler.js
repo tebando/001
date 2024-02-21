@@ -57,9 +57,8 @@ AFRAME.registerComponent("gesture-handler", {
     this.el.object3D.rotation.y = newYRotation;
     this.el.object3D.rotation.z = newZRotation; // Z軸の適用
   }
-}
-,
-  
+},
+    
     handleScale: function (event) {
       if (this.isVisible) {
         this.scaleFactor *=
