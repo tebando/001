@@ -9,10 +9,10 @@
     <!-- シーンの作成、VRモードのUI非表示 -->
        <a-scene>
         <!-- 3Dモデルを読み込む -->
-        <a-asset-item id="chaei" src="public/elephant/rscene.gltf" scale="1 1 1"></a-asset-item>
+        <a-asset-item id="chaei" src="rscene.gltf" scale="1 1 1"></a-asset-item>
       </a-assets>
       <!-- マーカーを設定する -->
-      <a-marker type="pattern" url="asset/ma/hiro.patt">
+      <a-marker type="pattern" url="hiro.patt">
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#chaei"></a-entity>
       </a-marker>
