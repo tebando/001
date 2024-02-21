@@ -42,7 +42,9 @@ function turnSoundOn () {
          >
         <!-- 3Dモデルを読み込む -->
         <a-asset-item id="model" src="sc001.glb"></a-asset-item>
+          <audio id="001" src="001.wav" preload="auto"></audio>
       </a-assets>
+        
       <!-- マーカーを設定する -->
       <a-marker type="pattern" url="2.patt">
     
@@ -65,6 +67,8 @@ function turnSoundOn () {
           scale="1 1 1"
           color="red"
           ></a-text>
+        <a-sound
+          id="m001" src="#001" position="0 1.2 -3" autoplay="false" loop="true"></a-sound>
       </a-marker>
       <!-- カメラを追加 -->
       <a-entity camera></a-entity>
