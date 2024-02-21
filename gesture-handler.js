@@ -39,14 +39,26 @@ AFRAME.registerComponent("gesture-handler", {
       this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
     },
   
-    handleRotation: function (event) {
-      if (this.isVisible) {
-        this.el.object3D.rotation.y +=
-          event.detail.positionChange.x * this.data.rotationFactor;
-        this.el.object3D.rotation.x +=
-          event.detail.positionChange.y * this.data.rotationFactor;
-      }
-    },
+  handleRotation: function (event) {
+  if (this.isVisible) {
+    // 新しい回転値を計算
+    var newYRotation = this.el.object3D.rotation.y + event.detail.positionChange.x * this.data.rotationFactor;
+    var newXRotation = this.el.object3D.rotation.x + event.detail.positionChange.y * this.data.rotationFactor;
+
+    // y軸の回転を-πからπ（-180度から180度）の範囲に制限
+    if (newYRotation > Math.PI) newYRotation = Math.PI;
+    else if (newYRotation < -Math.PI) newYRotation = -Math.PI;
+
+    // x軸の回転を-πからπの範囲に制限
+    if (newXRotation > Math.PI) newXRotation = Math.PI;
+    else if (newXRotation < -Math.PI) newXRotation = -Math.PI;
+
+    // 回転を適用
+    this.el.object3D.rotation.y = newYRotation;
+    this.el.object3D.rotation.x = newXRotation;
+  }
+}
+,
   
     handleScale: function (event) {
       if (this.isVisible) {
