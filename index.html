@@ -8,7 +8,13 @@
   </head>
   <body style="margin: 0; overflow: hidden">
     <!-- シーンの作成、VRモードのUI非表示 -->
-       <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
+       <a-scene 
+         embedded
+         arjs
+         vr-mode-ui="enabled: false;" 
+         renderer="logarithmicDepthBuffer: true;"
+         gesture-detector
+         >
         <!-- 3Dモデルを読み込む -->
         <a-asset-item id="model" src="sc001.glb"></a-asset-item>
       </a-assets>
