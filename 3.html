@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+        <!-- A-Frameを読み込む -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="gesture-detector.js"></script>
+<script src="gesture-handler.js"></script>
+   <script src="sound-handler.js"></script> 
+        <!-- AR.jsを読み込む -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script>
+function muteSound() {
+    var soundBtn = document.getElementById('voice');
+    soundBtn.style.display = 'none';
+
+    var muteBtn = document.getElementById('mute');
+    muteBtn.style.display = 'block';
+
+}
+
+function turnSoundOn () {
+    var soundBtn = document.getElementById('voice');
+    soundBtn.style.display = 'block';
+
+    var muteBtn = document.getElementById('mute');
+    muteBtn.style.display = 'none';
+}
+</script>
+</head>
+  <body style="margin: 0; overflow: hidden">
+        <div class="btn">
+          <button id="voice" class="voice" onclick="muteSound()"><i class="fa-solid fa-volume-high" style="color: #c0c0c0;"></i></button>
+        <button id="mute" class="mute-voice" onclick="turnSoundOn()"  style="display:none"><i class="fa-solid fa-volume-xmark" style="color: #ff2600;"></i></button>
+  </div>
+    <!-- シーンの作成、VRモードのUI非表示 -->
+       <a-scene 
+         embedded
+         arjs
+         vr-mode-ui="enabled: false;" 
+         renderer="logarithmicDepthBuffer: true;"
+         gesture-detector
+         >
+        <!-- 3Dモデルを読み込む -->
+        <a-asset-item id="model" src="sc001.glb"></a-asset-item>
+      </a-assets>
+      <!-- マーカーを設定する -->
+      <a-marker type="pattern" url="2.patt">
+    
+        <!-- 3Dモデルを呼び出す -->
+      <a-entity 
+          position="-0.8 0 0"
+        rotation="0 0 0"  
+        scale="5 5 5"
+          class="clickable"
+        gesture-handler
+          gltf-model="#model"
+          htmlembed
+         sound="001.wav;"
+        soundhandler
+          ></a-entity>
+        <a-text
+          value="You can pinch in and out."
+          position="-0.9 -5 0"
+          rotation="-90 0 0" 
+          scale="1 1 1"
+          color="red"
+          ></a-text>
+      </a-marker>
+      <!-- カメラを追加 -->
+      <a-entity camera></a-entity>
+  </a-scene>
+  </body>
+</html>
