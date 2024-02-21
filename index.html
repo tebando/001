@@ -10,12 +10,12 @@
     <a-scene embedded arjs vr-mode-ui="enabled: false">
       <a-assets>
         <!-- 3Dモデルを読み込む -->
-        <a-asset-item id="chaei" src="public/elephant/scene.glb" scale="0.02 0.02 0.02"></a-asset-item>
+        <a-asset-item id="chaei" src="/public/elephant/scene.glb" scale="0.02 0.02 0.02"></a-asset-item>
       </a-assets>
       <!-- マーカーを設定する -->
-      <a-marker type="pattern" url="asset/ma/hiro.patt">
+      <a-marker type="pattern" url="/asset/ma/hiro.patt">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#chaei" rotation="-90 0 0"></a-entity>
+        <a-entity gltf-model="#chaei"></a-entity>
       </a-marker>
       <!-- カメラを追加 -->
       <a-entity camera></a-entity>
