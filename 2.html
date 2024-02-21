@@ -1,14 +1,42 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+        <!-- A-Frameを読み込む -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="gesture-detector.js"></script>
+<script src="gesture-handler.js"></script>
+    <!-- AR.jsを読み込む -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-  <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+  <body style="margin: 0; overflow: hidden">
+    <!-- シーンの作成、VRモードのUI非表示 -->
+       <a-scene 
+         embedded
+         arjs
+         vr-mode-ui="enabled: false;" 
+         renderer="logarithmicDepthBuffer: true;"
+         gesture-detector
+         >
+        <!-- 3Dモデルを読み込む -->
+        <a-asset-item id="model" src="sc001.glb"></a-asset-item>
+      </a-assets>
+      <!-- マーカーを設定する -->
+      <a-marker type="pattern" url="2.patt">
+      <a-text value="ポーランド電卓" 
+        position="50 50 0" align="center" rotation="-90 0 0" color="#7993ff">
+      </a-text>
+        <!-- 3Dモデルを呼び出す -->
+        <a-entity 
+          position="0 0 0"
+          scale="5 5 5"
+          class="clickable"
+          gesture-handler
+          gltf-model="#model"
+          htmlembed
+          ></a-entity>
+      </a-marker>
+      <!-- カメラを追加 -->
+      <a-entity camera></a-entity>
+  </a-scene>
   </body>
 </html>
