@@ -10,10 +10,12 @@
     <!-- シーンの作成、VRモードのUI非表示 -->
        <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
         <!-- 3Dモデルを読み込む -->
-        <a-asset-item id="chaei" src="sc001.glb" scale="50 50 50"></a-asset-item>
+        <a-asset-item id="chaei" src="sc001.glb"></a-asset-item>
       </a-assets>
       <!-- マーカーを設定する -->
-      <a-marker type="pattern" url="hiro.patt">
+      <a-marker preset="custom" type="pattern" url="hiro.patt">
+          <a-text value="\(^o^)/" position=" -0.3 0 0.5" align="center" rotation="-90 0 0" color="#7993ff">
+      </a-text>
         <!-- 3Dモデルを呼び出す -->
         <a-entity gltf-model="#chaei"></a-entity>
       </a-marker>
