@@ -54,11 +54,15 @@ function turnSoundOn () {
         <!-- 3Dモデルを呼び出す -->
       <a-text value="test" 
           position="-0.8 0 0"
-        rotation="0 0 0"  
+        rotation="-90 0 0"  
         scale="5 5 5"></a-text>
         <a-sound
           id="m001" src="#001" position="0 1.2 -3" autoplay="false" loop="true"></a-sound>
-        <a-image id="mbtn" src="#istop" position="0 1.2 -3"></a-image>
+        <a-image
+          id="mbtn"
+          src="#istop"
+          rotation="-90 0 0"  
+          position="0 1.2 -3"></a-image>
       </a-marker>
       <!-- カメラを追加 -->
       <a-entity camera></a-entity>
