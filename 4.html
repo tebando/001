@@ -26,8 +26,7 @@
         <!-- 3Dモデルを読み込む -->
 <assets>
           <audio id="a001" src="s001.mp3" preload="auto"></audio>
-           <a-box src="play.jpeg; audio="src: #a001; loop: true;"></a-box>
-         <img id="iplay" src="play.jpeg"></img>
+          <img id="iplay" src="play.jpeg"></img>
          <img id="istop" src="stop.jpeg"></img>
 </assets>
         
@@ -35,11 +34,13 @@
       <a-marker type="pattern" url="2.patt">
     
         <!-- 3Dモデルを呼び出す -->
-      <a-text value="test11" 
+         <a-box src="play.jpeg; audio="src: #a001; loop: true;"></a-box>
+        <a-text value="test11" 
           position="-0.8 0 0"
         rotation="-90 0 0"  
         scale="0.5 0.5 0.5"></a-text>
-       
+      <a-entity id="rig" movement-controls>
+        <a-entity camera look-controls="pointerLockEnabled: true"></a-entity> 
       </a-marker>
       <!-- カメラを追加 -->
       <a-entity camera></a-entity>
