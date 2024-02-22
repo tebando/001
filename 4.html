@@ -3,11 +3,7 @@
     <meta charset="UTF-8">
         <!-- A-Frameを読み込む -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="gesture-detector.js"></script>
-<script src="gesture-handler.js"></script>
-   <script src="sound-handler.js"></script> 
-    <script src="main.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/howler@2.2.1/dist/howler.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/howler@2.2.1/dist/howler.min.js"></script>
     <script src="script.js"></script>
     <!-- AR.jsを読み込む -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -26,8 +22,7 @@
         <!-- 3Dモデルを読み込む -->
 <assets>
           <audio id="a001" src="s001.mp3" preload="auto"></audio>
-          <img id="iplay" src="play.jpeg"></img>
-         
+                
 </assets>
         
       <!-- マーカーを設定する -->
@@ -36,7 +31,6 @@
         <!-- 3Dモデルを呼び出す -->
          <a-entity sound="src: #a001"></a-entity> 
         <a-box
-           src="#iplay"
            audio="src: #a001; loop: true;"></a-box>
         <a-text value="test14" 
           position="-0.8 0 0"
