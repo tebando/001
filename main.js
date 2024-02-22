@@ -6,7 +6,7 @@ window.onload = (e)=>{
 	const scene = document.querySelector("a-scene");
 
 	const sound01 = document.getElementById("m001");
-	const btn01 = document.getElementById("mbtn01");
+	const btn01 = document.getElementById("mbtn");
 	btn01.addEventListener("click", (e)=>{
 		const sound = sound01.components.sound;
 		if(sound.isPlaying){
