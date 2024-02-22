@@ -9,30 +9,9 @@
     <script src="main.js"></script>
         <!-- AR.jsを読み込む -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<script>
-function muteSound() {
-    var soundBtn = document.getElementById('voice');
-    soundBtn.style.display = 'none';
-
-    var muteBtn = document.getElementById('mute');
-    muteBtn.style.display = 'block';
-
-}
-
-function turnSoundOn () {
-    var soundBtn = document.getElementById('voice');
-    soundBtn.style.display = 'block';
-
-    var muteBtn = document.getElementById('mute');
-    muteBtn.style.display = 'none';
-}
-</script>
 </head>
   <body style="margin: 0; overflow: hidden">
-        <div class="btn">
-          <button id="voice" class="voice" onclick="muteSound()"><i class="fa-solid fa-volume-high" style="color: #c0c0c0;"></i></button>
-        <button id="mute" class="mute-voice" onclick="turnSoundOn()"  style="display:none"><i class="fa-solid fa-volume-xmark" style="color: #ff2600;"></i></button>
-  </div>
+      
     <!-- シーンの作成、VRモードのUI非表示 -->
        <a-scene 
          embedded
@@ -42,7 +21,7 @@ function turnSoundOn () {
          gesture-detector
          >
         <!-- 3Dモデルを読み込む -->
-        <a-asset-item id="model" src="sc001.glb"></a-asset-item>
+
          <a-assets timeout="1000">
           <audio id="001" src="001.wav" preload="auto"></audio>
          <img id="iplay" src="play.jpeg"></img>
@@ -53,7 +32,7 @@ function turnSoundOn () {
       <a-marker type="pattern" url="2.patt">
     
         <!-- 3Dモデルを呼び出す -->
-      <a-text value="test2" 
+      <a-text value="test3" 
           position="-0.8 0 0"
         rotation="-90 0 0"  
         scale="0.5 0.5 0.5"></a-text>
