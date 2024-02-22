@@ -7,7 +7,7 @@ window.onload = (e)=>{
 
 	const sound01 = document.getElementById("m001");
 	const btn01 = document.getElementById("mbtn");
-	btn01.addEventListener("mouseup", (e)=>{
+	btn01.addEventListener("click", (e)=>{
 		const sound = sound01.components.sound;
 		if(sound.isPlaying){
 			sound.pauseSound();
