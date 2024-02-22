@@ -9,9 +9,9 @@ AFRAME.registerComponent('audio', {
 
   init: function() {
     this.sound = new Howl({
-      src: [ this.data.src ],
-      loop: this.data.loop,
-      volume: this.data.volume
+      src: [ #a001 ],
+      loop: this.sound.loop,
+      volume: this.sound.volume
     });
 
     this.camera = document.getElementById('rig');
