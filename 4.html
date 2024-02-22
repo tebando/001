@@ -4,6 +4,13 @@
         <!-- A-Frameを読み込む -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.1/dist/howler.min.js"></script>
+  <script src="/path/to/howler.js"></script>
+<script>
+    var sound = new Howl({
+      src: ['s001.mp3']
+    });
+  sound.play();
+</script>
     <script src="script.js"></script>
     <!-- AR.jsを読み込む -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -29,14 +36,11 @@
       <a-marker type="pattern" url="2.patt">
     
         <!-- 3Dモデルを呼び出す -->
-         <a-entity sound="src: #a001"></a-entity> 
-        <a-box
-           position="0 0 0"
-           audio="src: #a001; loop: true;"></a-box>
-        <a-text value="test14" 
+        <a-text value="test15" 
           position="-0.8 0 0"
         rotation="-90 0 0"  
         scale="0.5 0.5 0.5"></a-text>
+        
       <a-entity id="rig" movement-controls>
         <a-entity camera look-controls="pointerLockEnabled: true"></a-entity> 
       </a-marker>
